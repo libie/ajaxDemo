@@ -37,32 +37,30 @@
 				//Document.write(xmlhttp.readyState);
 			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			    {
-			    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+			    document.getElementById("testajax").innerHTML=xmlhttp.responseText;
 			    }
 			  };
-			alert(xmlhttp.readyState);
-			alert(xmlhttp.state);
+			//alert(xmlhttp.readyState);
+			//alert(xmlhttp.state);
+			
+						
 			//--get请求
 			//为了避免得到的是缓存的结果，请向 URL 添加一个唯一的 ID：t
 			//如果您希望通过 GET 方法发送信息，请向 URL 添加信息：fname=Bie&lname=Li
-			xmlhttp.open("GET","servlet/TestServlet?fname=Bie&lname=Li&t=" + Math.random(),true);
-			xmlhttp.send();
-			alert(xmlhttp.readyState);
-			alert(xmlhttp.state);
+			//xmlhttp.open("GET","servlet/TestServlet?fname=Bie&lname=Li&t=" + Math.random(),true);
+			//xmlhttp.send();
 			
 			//--post请求
 			//一个简单 POST 请求：
-			xmlhttp.open("POST","servlet/TestServlet",true);
-			xmlhttp.send();
-			alert(xmlhttp.readyState);
-			alert(xmlhttp.state);
+			//xmlhttp.open("POST","servlet/TestServlet",true);
+			//xmlhttp.send();
 			
 			//--如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：
 			xmlhttp.open("POST","servlet/TestServlet",true);
 			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xmlhttp.send("fname=Bie&lname=Li");
-			alert(xmlhttp.readyState);
-			alert(xmlhttp.state);
+
+			/* xmlhttp.send();方法只会提交最后一个 */
 
 //alert('aaa');
 
@@ -74,7 +72,7 @@
   </head>
   
   <body>
-    <div id="myDiv"><h3>Let AJAX change this text</h3></div>
+    <div id="myDiv"><h3 id="testajax">Let AJAX change this text</h3></div>
 	<button type="button" onclick="loadXMLDoc()">JS请求数据</button>
 	<br/>
 	

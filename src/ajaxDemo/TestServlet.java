@@ -39,8 +39,9 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
-		
 		System.out.println("this is doGet Method");
+		
+		
 		
 	}
 
@@ -58,8 +59,12 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
-
 		System.out.println("this is doPost Method");
+		
+		String xing = (String) request.getParameter("lname");
+		String ming = (String) request.getParameter("fname");
+		System.out.println(xing+ming);
+		response.getWriter().print(xing+ming);
 		
 	}
 

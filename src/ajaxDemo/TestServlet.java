@@ -39,9 +39,12 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
 		System.out.println("this is doGet Method");
 		
-		
+		String xing = (String) request.getParameter("lname");
+		String ming = (String) request.getParameter("fname");
+		response.getWriter().print("通过Get方法处理的Ajax："+xing+ming);
 		
 	}
 
@@ -59,12 +62,13 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
 		System.out.println("this is doPost Method");
 		
 		String xing = (String) request.getParameter("lname");
 		String ming = (String) request.getParameter("fname");
-		System.out.println(xing+ming);
-		response.getWriter().print(xing+ming);
+		//System.out.println(xing+ming);
+		response.getWriter().print("通过Post方法处理的Ajax："+xing+ming);
 		
 	}
 

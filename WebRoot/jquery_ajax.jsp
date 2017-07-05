@@ -17,12 +17,12 @@
   
   <body>
     This is my JSP page. <br>
-    <input type="button" value="提交ajax" onclick="sub_ajax()">
+    <input type="button" value="提交ajax" onclick="jq_ajax()">
     <div><h3 id='showajaxmsg'>testajax</h3></div>
     
     
     <script type="text/javascript">
-    function sub_ajax(){
+    function jq_ajax(){
     	$.ajax({
     		type:"post",
     		url:"servlet/TestServlet",
